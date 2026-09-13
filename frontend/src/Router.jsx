@@ -6,6 +6,10 @@ import ResetPassword from "./features/auth/pages/ResetPassword"
 
 const Router = createBrowserRouter([
   {
+    path: "/",
+    element: <h1>hello</h1>
+  },
+  {
     path: "/login",
     element: <Login/>
   },
