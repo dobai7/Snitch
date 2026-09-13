@@ -1,138 +1,80 @@
 import React from 'react'
-import "../styles/auth.css"
+import "../styles/auth.scss"
+import "../../../index.scss"
+import registerImg from "../images/register-1.png"
+import google from "../images/google.svg"
 
-// const formField = (id, name, cName ,type,placeholder,value,onClick) => {
-//     return (
-//         <div className="form-field">
-//             <label htmlFor={id}>{name}</label>
-//             <div className="inp-content">
-//                 <i className={cName}></i>
-
-//                 <input
-//                     type={type}
-//                     id={id}
-//                     name={name}
-//                     placeholder={placeholder}
-//                     value={value}
-//                     onClick={onClick}
-//                 />
-//             </div>
-//         </div>
-//     )
-// }
 
 const Register = () => {
-
     return (
-        <div className='register'>
-            <div className="lregister">
-                <img src="./register.png" alt="" />
+        <div className='auth-page'>
+            <div className="auth-left">
+                <img src={registerImg} alt="" />
             </div>
 
-            <div className="rregister">
+            <div className="auth-down">
 
+            <div className="auth-right">
+                <h1>Create your account</h1>
                 <form>
-                    <h2>Create an account</h2>
-                    <p>join the exclusive sartorial network.</p>
-
-                    <input type="file" nake="profilePic" accept='image/*' />
-
-                    <div className="btntoggle">
-                        <button>buyer</button>
-                        <button>seller</button>
+                    <div className="form-inner">
+                        {/*for name */}
+                        <label htmlFor="name">name</label>
+                        <input type="text" id='name' name='name' placeholder='John Willium' required />
                     </div>
 
-                    <div className="form-field">
-                        <label htmlFor="name">Full Name</label>
-                        <div className="inp-content">
-                            <i className="ri-user-3-line"></i>
+                    <div className="form-inner">
+                        {/* for email */}
+                        <label htmlFor="email">email</label>
+                        <input type="email" id='email' name='email' placeholder='text@test.com' required />
+                    </div>
 
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="John Willium"
-                                value={value}
-                                onClick={()=>{}}
-                            />
+                    <div className="form-inner">
+                        {/* for password */}
+                        <label htmlFor="password">password</label>
+                        <input type="password" id='password' name='password' placeholder='test@123' required />
+                    </div>
+
+                    <div className="form-inner">
+                        {/* for conformPassword */}
+                        <label htmlFor="conformPassword">conform Password</label>
+                        <input type="password" id='conformPassword' name='conformPassword' placeholder='test@123' required />
+                    </div>
+
+                    <div className="form-inner">
+                        {/* for phone */}
+                        <label htmlFor="phone">phone</label>
+                        <input type="tel" id='phone' name='phone' placeholder='1234567890' required />
+                    </div>
+
+                    <div className='radio'>
+                        <label>Role</label>
+
+                        <div className='inner-radio'>
+                            <div>
+                                <input type="radio" id="buyer" name="role" value="buyer" defaultChecked />
+                                <label for="buyer">Buyer</label>
+                            </div>
+
+
+                            <div>
+                                <input type="radio" id="seller" name="role" value="seller" />
+                                <label for="seller">Seller</label>
+                            </div>
                         </div>
                     </div>
 
-                    <div className="form-field">
-                        <label htmlFor="email">Email</label>
-                        <div className="inp-content">
-                            <i className="ri-user-3-line"></i>
-
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="example@example.com"
-                                value={value}
-                                onClick={()=>{}}
-                            />
-                        </div>
-                    </div>
-
-                    <div className="form-field">
-                        <label htmlFor="mobile">Mobile</label>
-                        <div className="inp-content">
-                            <i className="ri-user-3-line"></i>
-
-                            <input
-                                type='tel'
-                                id="mobile"
-                                name="mobile"
-                                placeholder="9888889125"
-                                value={value}
-                                onClick={()=>{}}
-                            />
-                        </div>
-                    </div>
-
-                    <div className="form-field">
-                        <label htmlFor="password">Password</label>
-                        <div className="inp-content">
-                            <i className="ri-user-3-line"></i>
-
-                            <input
-                                type="password"
-                                id="password"
-                                name="password"
-                                placeholder="********"
-                                value={value}
-                                onClick={()=>{}}
-                            />
-                        </div>
-                    </div>
-
-                    <div className="form-field">
-                        <label htmlFor="c-password">Conform Password</label>
-                        <div className="inp-content">
-                            <i className="ri-user-3-line"></i>
-
-                            <input
-                                type="password"
-                                id="c-password"
-                                name="c-password"
-                                placeholder="********"
-                                value={value}
-                                onClick={()=>{}}
-                            />
-                        </div>
-                    </div>
-
-                    {/* <formField 
-                    id="nameField" 
-                    name="Full Name" 
-                    cName="ri-user-3-line"
-                    type="text"
-                    placeholder="Josh Willium"
-                    value={value}
-                    onClick={onClick}
-                     /> */}
+                    <button type='submit'>Register</button>
 
                 </form>
+
+                <p>already have an account? <span>Login</span></p>
+
+                <button className="google-btn">
+                    <img src={google} alt="Google" />
+                    <span>Continue with Google</span>
+                </button>
+            </div>
             </div>
         </div>
     )
