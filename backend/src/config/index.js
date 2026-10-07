@@ -17,6 +17,10 @@ if(!process.env.EMAIL_PASS){
     throw new Error("EMAIL_PASS missing");
 }
 
+if(!process.env.EMAIL_SECRET){
+    throw new Error("EMAIL_SECRET missing");
+}
+
 if(!process.env.RESET_SECRET){
     throw new Error("EMAIL_PASS missing");
 }
@@ -46,7 +50,8 @@ const config = {
     GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
     GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
     GOOGLE_REDIRECT_URI: process.env.GOOGLE_REDIRECT_URI,
-    CLIENT_URL: process.env.CLIENT_URL
+    CLIENT_URL: process.env.CLIENT_URL,
+    EMAIL_SECRET: process.env.EMAIL_SECRET
 }
 
 export default config

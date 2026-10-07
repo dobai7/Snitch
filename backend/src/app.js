@@ -1,6 +1,8 @@
 import express from "express"
 import morgan from "morgan"
 import dns from "dns"
+import cors from "cors"
+
 
 import authRouter from "./routes/auth.route.js";
 import cookieParser from "cookie-parser";
@@ -8,12 +10,14 @@ import sendEmail from "./services/mailService/nodemailer.js";
 import errorHandler from "./middlewares/errorHandler.js";
 
 dns.setServers([
-    "0.0.0.0", "1.1.1.1"
+    "0.0.0.0", "1.1.1.1","8.8.8.8"
 ])
-
 const app = express();
 
-
+app.use(cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+}))
 app.use(morgan("dev"))
 app.use(express.json())
 app.use(cookieParser())
